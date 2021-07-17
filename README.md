@@ -14,5 +14,5 @@ n Xn Yn Zn
 where the first line contains the number of points "n" and the next "n" lines contain all points specified by
 an index and three plane coordinates (X,Y,Z).
 
-The execution of the TIN program creates a "triangles.txt" file with the plane coordinates (X,Y) of all Delaunay
+The execution of the TIN program creates the "triangles.txt" file with the plane coordinates (X,Y) of all Delaunay
 triangles. All triangles are separated by the word "END".
