@@ -1,0 +1,24 @@
+
+#create bin src lib file and move all files to src then compile
+
+comprun: program run
+
+
+program: main.o   utilityfunctions.o geometricfunctions.o enclosingtriangle.o delaunaytriangulation.o points.o 
+	g++ ./lib/main.o ./lib/utilityfunctions.o ./lib/geometricfunctions.o ./lib/enclosingtriangle.o ./lib/delaunaytriangulation.o ./lib/points.o  -o ./bin/program
+utilityfunctions.o: 
+	g++ -I "./include" -c ./src/utilityfunctions.cpp -o ./lib/utilityfunctions.o
+geometricfunctions.o:
+	g++ -I "./include" -c ./src/geometricfunctions.cpp -o ./lib/geometricfunctions.o
+enclosingtriangle.o:
+	g++ -I "./include" -c ./src/enclosingtriangle.cpp -o ./lib/enclosingtriangle.o
+delaunaytriangulation.o:
+	g++ -I "./include" -c ./src/delaunaytriangulation.cpp -o ./lib/delaunaytriangulation.o
+points.o:
+	g++ -I "./include" -c ./src/points.cpp -o ./lib/points.o
+funtions.o:
+	g++ -I "./include" -c ./src/funtions.cpp -I "./include" -c ./src/funtions.h -o ./lib/funtions.o
+main.o:
+	g++ -I "./include" -c ./src/main.cpp -o ./lib/main.o
+run:
+	./bin/program.exe
